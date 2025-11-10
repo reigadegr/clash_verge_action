@@ -150,10 +150,9 @@ jobs:
           fi
           file="$(find . -name "$bin_name")"
           echo "$(realpath $file)"
-          mkdir -p ${{ github.event.inputs.TARGET }}_module || echo "已有默认目录"
-          dd if=./src-tauri/target/"${{ matrix.target }}"/release/$bin_name of=./"${{ matrix.target }}"_module/$bin_name
-          git log > ./"${{ matrix.target }}"_module/commits.txt
-          cp -af clash_verge_last_commit.txt ./"${{ matrix.target }}"_module/clash_verge_last_commit.txt || true
+          mkdir -p ../${{ github.event.inputs.TARGET }}_module || echo "已有默认目录"
+          dd if=./src-tauri/target/"${{ matrix.target }}"/release/$bin_name of=../"${{ matrix.target }}"_module/$bin_name
+          git log > ../"${{ matrix.target }}"_module/commits.txt
 
       - name: "📤 Upload to GitHub artifacts"
         uses: actions/upload-artifact@v4
