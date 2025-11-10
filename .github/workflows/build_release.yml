@@ -106,8 +106,7 @@ jobs:
       - name: Install frontend dependencies
         run: |
           cd clash_verge
-          npm i @tauri-apps/plugin-opener@2.5.0
-          npm install; npm run build
+          pnpm install; pnpm run web:build
 
       - name: "⚙️ Reset flags"
         shell: bash
