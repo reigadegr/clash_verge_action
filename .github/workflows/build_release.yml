@@ -109,14 +109,10 @@ jobs:
         with:
           node-version: "22"
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          run_install: false
-
       - name: Install frontend dependencies
         run: |
           cd clash_verge
+          npm install -g pnpm
           pnpm i
           pnpm run prebuild ${{ matrix.target }}
 
