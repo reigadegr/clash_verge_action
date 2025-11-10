@@ -108,7 +108,7 @@ jobs:
         run: |
           cd clash_verge
           npm install -g pnpm
-          pnpm install; pnpm run web:build
+          # pnpm install; pnpm run web:build
 
       - name: "⚙️ Reset flags"
         shell: bash
