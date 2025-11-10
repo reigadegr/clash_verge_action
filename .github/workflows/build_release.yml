@@ -106,6 +106,7 @@ jobs:
       - name: Install frontend dependencies
         run: |
           cd clash_verge
+          npm install -g pnpm
           pnpm install; pnpm run web:build
 
       - name: "⚙️ Reset flags"
