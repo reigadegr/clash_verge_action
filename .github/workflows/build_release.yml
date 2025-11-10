@@ -110,6 +110,9 @@ jobs:
           node-version: "22"
 
       - name: Install frontend dependencies
+        env:
+          FORCE_COLOR: 1
+          PNPM_COLOR: always
         run: |
           cd clash_verge
           npm install -g pnpm
